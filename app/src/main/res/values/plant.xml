@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plants>
+   <!-- <plants>-->
         <plantsInfo>
             <name>仙人球</name>
             <content>仙人球为多年生肉质多浆草本植物，是双子叶植物，在植物分类学中属于仙人掌科。茎呈球形或椭圆形，高可达25厘米，绿色，球体有纵棱若干条，棱上密生针刺，黄绿色，长短不一，作辐射状。花着生于纵棱刺丛中，银白色或粉红色，长喇叭形，长可达20厘米，喇叭外鳞片，鳞腑有长毛。仙人球开花一般在清晨或傍晚，持续时间几小时到一天。球体常侧生出许多小球，形态优美、高雅。</content>
@@ -13,5 +13,5 @@
             <name>向日葵</name>
             <content>向日葵又名朝阳花，因其花常朝着太阳而得名。英语称之为sunflower却不是因为它的这一特性，因为其黄花开似太阳的缘故。16世纪～17世纪sunflower一词从拉丁语flos solis借译过来。向日葵的法语，意大利语和西班牙语名称tournesol，girasol和girasol同汉语名称一样，也是基于“向日”这一特性来命名的。</content>
         </plantsInfo>
-    </plants>
+   <!-- </plants>-->
 </resources>
