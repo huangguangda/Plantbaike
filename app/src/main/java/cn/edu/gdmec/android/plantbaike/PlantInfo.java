@@ -23,4 +23,8 @@ public class PlantInfo {
     public void setPlantContent(String plantContent){
         this.plantContent = plantContent;
     }
+
+    public void setPlantName(String plantName) {
+        this.plantName=plantName;
+    }
 }
