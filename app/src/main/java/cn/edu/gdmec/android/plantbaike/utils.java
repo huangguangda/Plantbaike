@@ -5,6 +5,7 @@ import android.util.Xml;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public class utils {
     public static List<PlantInfo> getPlantInfos(InputStream is)
         throws Exception{
         //得到pull解析器
-        XmlPullParser parser =Xml.newPullParser ();
+        XmlPullParser parser = Xml.newPullParser ();
         //初始化解析器，的一个参数代表包含xml的数据
         parser.setInput ( is, "utf-8" );
         List<PlantInfo> plantInfos = null;
@@ -29,15 +30,17 @@ public class utils {
                 //一个节点的开始标签
                 case XmlPullParser.START_TAG:
                     //解析到全局开始的标签 infos 根节点
-                    if ("plants".equals ( parser.getName () )){
-                        plantInfo = new PlantInfo ();
-                    }else if ("name".equals ( parser.getName () )){
-                        //parset.nextText（）得到该tag节点中的内容
-                        String name = parser.nextText ();
+                    if ("plants".equals(parser.getName())) {
+                        plantInfos = new ArrayList<PlantInfo> ();
+                    } else if ("plantsInfo".equals(parser.getName())) {
+                        plantInfo = new PlantInfo();
+                    } else if ("name".equals(parser.getName())) {
+                        // parset.nextText()得到该tag节点中的内容
+                        String name = parser.nextText();
                         plantInfo.setPlantName(name);
-                    }else if ("content".equals ( parser.getName () )){
-                        String content = parser.nextText ();
-                        plantInfo.setPlantContent ( content );
+                    } else if ("content".equals(parser.getName())) {
+                        String content = parser.nextText();
+                        plantInfo.setPlantContent(content);
                     }
                     break;
                 //一个节点结束的标签
