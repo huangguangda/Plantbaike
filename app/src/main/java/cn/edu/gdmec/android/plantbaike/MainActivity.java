@@ -1,12 +1,9 @@
 package cn.edu.gdmec.android.plantbaike;
-
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.List;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -18,22 +15,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_main );
-
         try{
             //获取植物信息
-            plantInfos = utils.getPlantInfos ( MainActivity.class.getClassLoader ().getResourceAsStream ( "plant.xml" ) );
-
+            plantInfos = utils.getPlantInfos(MainActivity.class
+                    .getClassLoader().getResourceAsStream("plant.xml"));
         }catch (Exception e){
             e.printStackTrace ();
         }
         initView();
     }
-
-    //初始化控件
     private void initView() {
-        findViewById ( R.id.btn_xrq ).setOnClickListener ( this );
-        findViewById ( R.id.btn_xrk ).setOnClickListener ( this );
-        findViewById ( R.id.btn_xyc ).setOnClickListener ( this );
+        findViewById(R.id.btn_xrq).setOnClickListener(this);
+        findViewById(R.id.btn_xrk).setOnClickListener(this);
+        findViewById(R.id.btn_xyc).setOnClickListener(this);
         mPlantContentTV = (TextView)findViewById(R.id.tv_plants_content);
         mPlantImgv = (ImageView) findViewById(R.id.imgv_plant);
         mPlantContentTV.setText("\u3000\u3000"+plantInfos.get(0).getPlantContent());
@@ -57,6 +51,5 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 mPlantImgv.setBackgroundResource(R.drawable.b);
                 break;
         }
-
     }
 }
